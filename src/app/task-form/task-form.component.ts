@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TaskService } from '../service/task.service';
 import { Task } from '../model/task';
+import { TaskItem } from '../model/task-item';
 
 @Component({
   selector: 'app-task-form',
@@ -11,6 +12,7 @@ import { Task } from '../model/task';
 export class TaskFormComponent implements OnInit {
 
   task: Task;
+  taskItem: TaskItem;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,13 +20,12 @@ export class TaskFormComponent implements OnInit {
     private taskService: TaskService) {
 
     this.task = new Task();
+    this.taskItem = new TaskItem();
   }
-
 
   onSubmit() {
     this.taskService.save(this.task).subscribe(result => this.gotoTaskList());
   }
-
 
   gotoTaskList() {
     this.router.navigate(['/tarefas']);

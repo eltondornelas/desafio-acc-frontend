@@ -1,0 +1,13 @@
+<div class="card my-5">
+    <div class="card-body">
+        <form (ngSubmit)="onSubmitItem()" #itemForm="ngForm">
+            <div class="form-group">
+                <label for="name">Descrição</label>
+                <input type="text" [(ngModel)]="item.description" class="form-control" id="description"
+                    name="description" placeholder="Informe a descrição da tarefa" required #name="ngModel">
+            </div>
+            <div [hidden]="!name.pristine" class="alert alert-danger">Description is required</div>
+            <button type="submit" [disabled]="!itemForm.form.valid" class="btn btn-info">Enviar</button>
+        </form>
+    </div>
+</div>

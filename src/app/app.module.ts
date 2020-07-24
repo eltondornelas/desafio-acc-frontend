@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { TaskService } from './service/task.service';
+import { ItemFormComponent } from './item-form/item-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskListComponent,
-    TaskFormComponent
+    TaskFormComponent,
+    ItemFormComponent,
   ],
   imports: [
     BrowserModule,

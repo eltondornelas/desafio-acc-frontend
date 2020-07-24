@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskFormComponent } from './task-form/task-form.component';
+import { ItemFormComponent } from './item-form/item-form.component';
 
 const routes: Routes = [
     { path: 'tarefas', component: TaskListComponent },
-    { path: 'itens', component: TaskFormComponent },
+    { path: 'add_tarefa', component: TaskFormComponent },
+    { path: 'add_item/:id', component: ItemFormComponent },
 ];
 
 @NgModule({
