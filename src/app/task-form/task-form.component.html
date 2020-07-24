@@ -6,7 +6,6 @@
                 <input type="text" [(ngModel)]="task.title" class="form-control" id="title" name="title"
                     placeholder="Informe o título da lista de tarefas" required #name="ngModel">
             </div>
-            <div [hidden]="!name.pristine" class="alert alert-danger">Title is required</div>
             <button type="submit" [disabled]="!taskForm.form.valid" class="btn btn-info">Enviar</button>
         </form>
     </div>

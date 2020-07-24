@@ -11,7 +11,7 @@ export class TaskService {
   private itemUrl = '/itens/'
 
   constructor(private http: HttpClient) {
-    this.tasksUrl = 'http://localhost:8082/tarefas/';
+    this.tasksUrl = 'http://localhost:8080/tarefas/';
   }
 
   public findAll(): Observable<Task[]> {
@@ -25,8 +25,12 @@ export class TaskService {
   public saveItem(id: string, taskItem: TaskItem) {
     //console.log('Cheguei no saveItem');
     //console.log(taskItem);
-    //console.log(this.tasksUrl + id + this.itemUrl);
     return this.http.post<TaskItem>(this.tasksUrl + id + this.itemUrl, taskItem);
+  }
+
+  public deleteItem(task_id: string, item_id: string) {
+    //console.log(this.tasksUrl + task_id + this.itemUrl + item_id);
+    return this.http.delete<TaskItem>(this.tasksUrl + task_id + this.itemUrl + item_id);
   }
 
 }
